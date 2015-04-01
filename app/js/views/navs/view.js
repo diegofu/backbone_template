@@ -1,4 +1,4 @@
-define(['underscore', 'backbone', 'jquery', 'collections/navs', 'templates/navbarTemplate.html'], function(_, Backbone, $, Navs, navbarTemplate) {
+define(['underscore', 'backbone', 'jquery', 'collections/navs', 'text!templates/navbarTemplate.html'], function(_, Backbone, $, Navs, navbarTemplate) {
     var NavView = Backbone.View.extend({
         el: $('#container'),
 
