@@ -1,0 +1,26 @@
+{
+  "name": "backbone_template",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diegofu/backbone_template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegofu/backbone_template/issues"
+  },
+  "homepage": "https://github.com/diegofu/backbone_template",
+  "dependencies": {
+    "http-server": "^0.8.0"
+  },
+  "scripts" : {
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  }
+}
