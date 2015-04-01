@@ -3,14 +3,13 @@ require.config({
     'jquery': '../components/jquery/dist/jquery',
     'underscore': '../components/underscore-amd/underscore',
     'backbone': '../components/backbone-amd/backbone',
+    'text': '../components/text/text'
   }
 });
 
-require(['collections/navs'], function(NavCollection) {
+require(['views/navs/view'], function(NavView) {
 
-	// console.log(NavCollection);
-  var navs = new NavCollection;
-  navs.fetch();
-  console.log(navs);
-  // navs.fetch();
+    var navView = new NavView();
+
+    navView.render();
 });

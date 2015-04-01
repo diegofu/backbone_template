@@ -1,4 +1,12 @@
-define(['underscore', 'backbone', 'collections/navs'], function(_, Backbone, Navs) {
-  var navs = new Navs();
-  console.log(navs);
+define(['underscore', 'backbone', 'jquery', 'collections/navs', 'templates/navbarTemplate.html'], function(_, Backbone, $, Navs, navbarTemplate) {
+    var NavView = Backbone.View.extend({
+        el: $('#container'),
+
+        render: function() {
+            var compiledTemplate = _.template(navbarTemplate);
+            $("#container").html(compiledTemplate);
+        }
+    });
+
+    return NavView;
 });
