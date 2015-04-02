@@ -3,8 +3,7 @@
     "navItems": [
         {
             "title": "nav item 1",
-            "link": "#/link1",
-            "active": "active"
+            "link": "#/link1"
         },
         {
             "title": "nav item 2",

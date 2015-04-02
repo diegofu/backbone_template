@@ -1,10 +1,10 @@
-define(['underscore', 'backbone', 'jquery', 'models/nav', 'text!templates/navbarTemplate.html', 'bootstrap'], function(_, Backbone, $, NavModel,navbarTemplate) {
+define(['underscore', 'backbone', 'jquery', 'models/nav', 'views/pages/view', 'text!templates/navbarTemplate.html', 'bootstrap'], function(_, Backbone, $, NavModel, PageView, navbarTemplate) {
     $(function() {
         $('.navbar').dropdown();
     });
 
     var NavView = Backbone.View.extend({
-        el: $('body'),
+        el: $('#navbar'),
         render: function() {
             this.model = new NavModel();
             var that = this;
@@ -15,7 +15,7 @@ define(['underscore', 'backbone', 'jquery', 'models/nav', 'text!templates/navbar
         },
 
         events: {
-            'click .navbar li': 'changeActiveTab',
+            'click .navbar li:not(.dropdown)': 'changeActiveTab',
             'blur .navbar': 'removeActive'
         },
 
@@ -25,7 +25,7 @@ define(['underscore', 'backbone', 'jquery', 'models/nav', 'text!templates/navbar
         },
 
         removeActive: function() {
-            $('.navbar li').removeClass('active');
+            $('.navbar li.dropdown ').removeClass('active');
         }
     });
 

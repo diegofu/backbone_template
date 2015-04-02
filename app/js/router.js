@@ -1,20 +1,16 @@
-define(['jquery', 'underscore', 'backbone', ''], function($, _, Backbone) {
+define(['jquery', 'underscore', 'backbone', 'views/pages/view'], function($, _, Backbone, PageView) {
 	var AppRouter = Backbone.Router.extend({
 		routes: {
+            '': 'index',
 			'*actions': 'defaultRoute'
 		},
 		defaultRoute: function(path) {
-			console.log(path);
-		}
+			var pageView = new PageView({'link': path});
+		},
 	});
 
 	var initialize = function() {
 		var app_router = new AppRouter;
-
-		// app_router.on('route:defaultRoute', function (actions) {
-		// 	console.log(actions);
-		// });
-
 		Backbone.history.start();
 	};
 
