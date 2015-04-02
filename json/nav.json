@@ -1,23 +1,46 @@
-[
-    {
-        "name": "Tim Cook",
-        "active": "active",
-        "link": "#"
-    },
-    {
-        "name": "Angela Ahrendts",
-        "link": "#/page2"
-    },
-    {
-        "name": "Eddy Cue",
-        "link": "#/page3"
-    },
-    {
-        "name": "Craig Federighi",
-        "link": "#/page4"
-    },
-    {
-        "name": "Jonathan Ive",
-        "link": "#/page5"
-    }
-]
+{
+    "brand": "Diego Test",
+    "navItems": [
+        {
+            "title": "nav item 1",
+            "link": "#/link1",
+            "active": "active"
+        },
+        {
+            "title": "nav item 2",
+            "navItems": [
+                {
+                    "title": "nav item 2-item 1",
+                    "link": "#/link2/link1"
+                },
+                {
+                    "title": "nav item 2-item 2",
+                    "link": "#/link2/link2"
+                }
+            ]
+        },
+        {
+            "title": "nav item 3",
+            "link": "#/link3"
+        }
+    ],
+    "navItemsRight": [
+        {
+            "title": "right 1",
+            "link": "#/right-link1"
+        },
+        {
+            "title": "right 2",
+            "navItems": [
+                {
+                    "title": "nav item 2-item 1",
+                    "link": "#/right-link2/link1"
+                },
+                {
+                    "title": "nav item 2-item 2",
+                    "link": "#/right-link2/link2"
+                }
+            ]
+        }
+    ]
+}

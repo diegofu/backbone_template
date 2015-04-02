@@ -4,7 +4,7 @@ require.config({
     'underscore': '../components/underscore-amd/underscore',
     'backbone': '../components/backbone-amd/backbone',
     'text': '../components/text/text',
-    'bootstrap': '../components/bootstrap/dist/js/bootstrap'
+    'bootstrap': '../components/bootstrap/dist/js/bootstrap',
   },
   shim: {
   	'bootstrap': {

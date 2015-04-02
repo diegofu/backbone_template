@@ -1,26 +1,31 @@
-define(['underscore', 'backbone', 'jquery', 'collections/navs', 'text!templates/navbarTemplate.html', 'bootstrap'], function(_, Backbone, $, NavsCollection, navbarTemplate) {
+define(['underscore', 'backbone', 'jquery', 'models/nav', 'text!templates/navbarTemplate.html', 'bootstrap'], function(_, Backbone, $, NavModel,navbarTemplate) {
     $(function() {
         $('.navbar').dropdown();
     });
 
     var NavView = Backbone.View.extend({
-        el: $('#container'),
+        el: $('body'),
         render: function() {
-            this.collection = new NavsCollection();
+            this.model = new NavModel();
             var that = this;
-            this.collection.fetch().done(function() {
-                var compiledTemplate = _.template(navbarTemplate, {collection: that.collection.toJSON()});
-                $("#container").html(compiledTemplate);
+            this.model.fetch().done(function() {
+                var compiledTemplate = _.template(navbarTemplate, {model: that.model.toJSON()});
+                $(that.el).html(compiledTemplate);
             });
         },
 
         events: {
-            'click .navbar li': 'changeActiveTab'
+            'click .navbar li': 'changeActiveTab',
+            'blur .navbar': 'removeActive'
         },
 
         changeActiveTab: function(ev) {
             $('.navbar li').removeClass('active');
             $(ev.target).parent().addClass('active');
+        },
+
+        removeActive: function() {
+            $('.navbar li').removeClass('active');
         }
     });
 

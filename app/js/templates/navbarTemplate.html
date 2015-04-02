@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<header class="navbar <%= model.type %> navbar-default">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -7,18 +7,57 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#"><%= model.brand %></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      	<% _.each(collection, function(item) { %>
-			<li class="<%= item.active %>">
-				<a href="<%= item.link %>"><%= item.name %></a>
-			</li>
-      	<% }) %>
+        <% _.each(model.navItems, function(item) { %>
+            <% if(_.isObject(item.navItems)) { %>
+                <li class="<%= item.active %> dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <%= item.title %> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <% _.each(item.navItems, function(sub_item) { %>
+                            <li>
+                                <a href="<%= sub_item.link %>"><%= sub_item.title %></a>
+                            </li>
+                        <% }) %>
+                      </ul>
+                </li>
+            <% } else { %>
+                <li class="<%= item.active %>">
+                    <a href="<%= item.link %>"><%= item.title %></a>
+                </li>
+            <% } %>
+        <% }) %>
       </ul>
-    </div>
+      <% if(_.isObject(model.navItemsRight)) { %>
+          <ul class="nav navbar-nav navbar-right">
+            <% _.each(model.navItemsRight, function(item) { %>
+                <% if(_.isObject(item.navItems)) { %>
+                    <li class="<%= item.active %> dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <%= item.title %> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <% _.each(item.navItems, function(sub_item) { %>
+                                <li>
+                                    <a href="<%= sub_item.link %>"><%= sub_item.title %></a>
+                                </li>
+                            <% }) %>
+                          </ul>
+                    </li>
+                <% } else { %>
+                    <li class="<%= item.active %>">
+                        <a href="<%= item.link %>"><%= item.title %></a>
+                    </li>
+                <% } %>
+            <% }) %>
+          </ul>
+      <% } %>
+    </nav>
   </div>
-</nav>
+</header>
