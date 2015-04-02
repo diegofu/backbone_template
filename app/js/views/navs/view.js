@@ -12,6 +12,15 @@ define(['underscore', 'backbone', 'jquery', 'collections/navs', 'text!templates/
                 var compiledTemplate = _.template(navbarTemplate, {collection: that.collection.toJSON()});
                 $("#container").html(compiledTemplate);
             });
+        },
+
+        events: {
+            'click .navbar li': 'changeActiveTab'
+        },
+
+        changeActiveTab: function(ev) {
+            $('.navbar li').removeClass('active');
+            $(ev.target).parent().addClass('active');
         }
     });
 

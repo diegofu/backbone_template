@@ -2,19 +2,22 @@
     {
         "name": "Tim Cook",
         "active": "active",
-        "link": "#/page1"
+        "link": "#"
     },
     {
         "name": "Angela Ahrendts",
         "link": "#/page2"
     },
     {
-        "name": "Eddy Cue"
+        "name": "Eddy Cue",
+        "link": "#/page3"
     },
     {
-        "name": "Craig Federighi"
+        "name": "Craig Federighi",
+        "link": "#/page4"
     },
     {
-        "name": "Jonathan Ive"
+        "name": "Jonathan Ive",
+        "link": "#/page5"
     }
 ]

@@ -9,7 +9,7 @@ define(['jquery', 'underscore', 'backbone', ''], function($, _, Backbone) {
 		var app_router = new AppRouter;
 
 		app_router.on('route:defaultRoute', function (actions) {
-			alert(actions);
+			console.log(actions);
 		});
 
 		Backbone.history.start();
