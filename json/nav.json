@@ -3,41 +3,41 @@
     "navItems": [
         {
             "title": "nav item 1",
-            "link": "#/link1"
+            "name": "test"
         },
         {
             "title": "nav item 2",
             "navItems": [
                 {
                     "title": "nav item 2-item 1",
-                    "link": "#/link2/link1"
+                    "name": "link2-1"
                 },
                 {
                     "title": "nav item 2-item 2",
-                    "link": "#/link2/link2"
+                    "name": "link2-2"
                 }
             ]
         },
         {
             "title": "nav item 3",
-            "link": "#/link3"
+            "name": "link3"
         }
     ],
     "navItemsRight": [
         {
             "title": "right 1",
-            "link": "#/right-link1"
+            "name": "right-link1"
         },
         {
             "title": "right 2",
             "navItems": [
                 {
                     "title": "nav item 2-item 1",
-                    "link": "#/right-link2/link1"
+                    "name": "right-link2-1"
                 },
                 {
                     "title": "nav item 2-item 2",
-                    "link": "#/right-link2/link2"
+                    "name": "right-link2-1"
                 }
             ]
         }

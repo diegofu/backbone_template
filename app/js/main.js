@@ -16,8 +16,3 @@ require.config({
 require(['underscore', 'backbone', 'router'], function(_, Backbone, Router) {
 	Router.initialize();
 });
-
-require(['views/navs/view'], function(NavView) {
-    var navView = new NavView();
-    navView.render();
-});

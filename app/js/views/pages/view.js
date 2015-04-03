@@ -6,7 +6,6 @@ define(['underscore', 'backbone', 'jquery', 'text!templates/pageTemplate.html'],
         },
         el: $('#content'),
         render: function() {
-            console.log(this.options);
             var compiledTemplate = _.template(pageTemplate, {data: this.options});
             $(this.el).html(compiledTemplate);
         }

@@ -18,15 +18,15 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <% _.each(item.navItems, function(sub_item) { %>
-                            <li>
-                                <a href="<%= sub_item.link %>"><%= sub_item.title %></a>
+                            <li class="<%= sub_item.name %>">
+                                <a href="#/<%= sub_item.name %>"><%= sub_item.title %></a>
                             </li>
                         <% }) %>
                       </ul>
                 </li>
             <% } else { %>
-                <li class="<%= item.active %>">
-                    <a href="<%= item.link %>"><%= item.title %></a>
+                <li class="<%= item.active %>  <%= item.name %>">
+                    <a href="#/<%= item.name %>"><%= item.title %></a>
                 </li>
             <% } %>
         <% }) %>
@@ -41,15 +41,15 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <% _.each(item.navItems, function(sub_item) { %>
-                                <li>
-                                    <a href="<%= sub_item.link %>"><%= sub_item.title %></a>
+                                <li class="<%= sub_item.name %>">
+                                    <a href="#/<%= sub_item.name %>"><%= sub_item.title %></a>
                                 </li>
                             <% }) %>
                           </ul>
                     </li>
                 <% } else { %>
-                    <li class="<%= item.active %>">
-                        <a href="<%= item.link %>"><%= item.title %></a>
+                    <li class="<%= item.active %>  <%= item.name %>">
+                        <a href="#/<%= item.name %>"><%= item.title %></a>
                     </li>
                 <% } %>
             <% }) %>

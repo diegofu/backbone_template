@@ -1,1 +1,11 @@
-<h1><%= data.link %></h1>
+<div class="row" id="dynamic_template">
+
+</div>
+
+<script type="text/javascript">
+	require(['underscore', 'backbone', 'text!templates/dynamicTemplates/<%= data.path %>Template.html'], function(_, Backbone, template) {
+		compiledTemplate = _.template(template);
+
+		$('#dynamic_template').html(compiledTemplate);
+	});
+</script>

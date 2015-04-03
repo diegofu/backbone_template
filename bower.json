@@ -19,6 +19,6 @@
     "underscore-amd": "~1.5.2",
     "requirejs": "^2.1.17",
     "bootstrap": "~3.3.4",
-    "text": "~2.0.14",
+    "text": "~2.0.14"
   }
 }

@@ -13,20 +13,13 @@ define(['underscore', 'backbone', 'jquery', 'models/nav', 'views/pages/view', 't
                 $(that.el).html(compiledTemplate);
             });
         },
-
-        events: {
-            'click .navbar li:not(.dropdown)': 'changeActiveTab',
-            'blur .navbar': 'removeActive'
-        },
-
-        changeActiveTab: function(ev) {
-            $('.navbar li').removeClass('active');
-            $(ev.target).parent().addClass('active');
-        },
-
-        removeActive: function() {
-            $('.navbar li.dropdown ').removeClass('active');
-        }
+        selectMenuItem: function(menuItem) {
+        	console.log($('#navbar li.' + menuItem));
+        	$('#navbar li').removeClass('active');
+	        if (menuItem) {
+	            $('#navbar li.' + menuItem).addClass('active');	
+	        }
+	    }
     });
 
     return NavView;

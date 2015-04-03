@@ -1,12 +1,20 @@
-define(['jquery', 'underscore', 'backbone', 'views/pages/view'], function($, _, Backbone, PageView) {
+define(['jquery', 'underscore', 'backbone', 'views/pages/view', 'views/navs/view'], function($, _, Backbone, PageView, NavView) {
 	var AppRouter = Backbone.Router.extend({
 		routes: {
-            '': 'index',
 			'*actions': 'defaultRoute'
 		},
-		defaultRoute: function(path) {
-			var pageView = new PageView({'link': path});
+		initialize: function() {
+			this.navView = new NavView();
+    		this.navView.render();
 		},
+		defaultRoute: function(path) {
+			if(path == undefined) {
+				var pageView = new PageView({'path': 'home'});
+			} else {
+				var pageView = new PageView({'path': path});				
+			}
+			this.navView.selectMenuItem(path);
+		}
 	});
 
 	var initialize = function() {
