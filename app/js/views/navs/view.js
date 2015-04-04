@@ -14,10 +14,9 @@ define(['underscore', 'backbone', 'jquery', 'models/nav', 'views/pages/view', 't
             });
         },
         selectMenuItem: function(menuItem) {
-        	console.log($('#navbar li.' + menuItem));
         	$('#navbar li').removeClass('active');
 	        if (menuItem) {
-	            $('#navbar li.' + menuItem).addClass('active');	
+	            $('#navbar li.' + menuItem).addClass('active');
 	        }
 	    }
     });

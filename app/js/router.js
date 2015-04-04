@@ -8,10 +8,11 @@ define(['jquery', 'underscore', 'backbone', 'views/pages/view', 'views/navs/view
     		this.navView.render();
 		},
 		defaultRoute: function(path) {
+            console.log(path);
 			if(path == undefined) {
 				var pageView = new PageView({'path': 'home'});
 			} else {
-				var pageView = new PageView({'path': path});				
+				var pageView = new PageView({'path': path});
 			}
 			this.navView.selectMenuItem(path);
 		}

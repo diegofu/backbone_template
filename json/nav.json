@@ -2,44 +2,31 @@
     "brand": "Diego Test",
     "navItems": [
         {
-            "title": "nav item 1",
-            "name": "test"
+            "title": "Navbar Docs",
+            "name": "navbar-docs"
         },
         {
-            "title": "nav item 2",
+            "title": "Dropdown Docs",
+            "name": "dropdown-doc"
+        },
+        {
+            "title": "Alert",
             "navItems": [
                 {
-                    "title": "nav item 2-item 1",
-                    "name": "link2-1"
+                    "title": "Alert Examples",
+                    "name": "alert-example"
                 },
                 {
-                    "title": "nav item 2-item 2",
-                    "name": "link2-2"
+                    "title": "Alert Events",
+                    "name": "alert-event"
                 }
             ]
-        },
-        {
-            "title": "nav item 3",
-            "name": "link3"
         }
     ],
     "navItemsRight": [
         {
-            "title": "right 1",
-            "name": "right-link1"
-        },
-        {
-            "title": "right 2",
-            "navItems": [
-                {
-                    "title": "nav item 2-item 1",
-                    "name": "right-link2-1"
-                },
-                {
-                    "title": "nav item 2-item 2",
-                    "name": "right-link2-1"
-                }
-            ]
+            "title": "Collapse Docs",
+            "name": "collapse-doc"
         }
     ]
 }
